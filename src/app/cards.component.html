@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body> 
+ 
+<div class="container">
+  <h2>Broswer all Coures</h2>
+  <div *ngIf="cards">
+    <div *ngFor="let card of cards">
+      <div class="card-body row" style="width: 1000px;">
+        <div style="float: left;width: 150px;"><img src="{{card.Thumbnail}}" alt="Card image" style="width: 120px;">
+        </div>
+        <div style="margin-left: 160px;">
+          <div class="row">{{card.Name}}</div>
+          <div class="row"><div>Author</div> &nbsp;&nbsp;&nbsp; <div style="font-family: Arial, Helvetica, sans-serif;">{{card.Author}}</div></div>
+          <div class="row">{{card.Description | slice:0:280}}...</div>
+        </div>
+      </div>       
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
